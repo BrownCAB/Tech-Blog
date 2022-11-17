@@ -4,35 +4,24 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-//TODO: homepage with populated post
-router.get('/', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
-    res.render('homepage', {
-      users,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-// login with redirect
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
+//TODO: homepage view with all populated posts
+router.get('/', async (req, res) => {
+  res.send('Render all posts veiw along with all posts from the db')
+}); 
+  
+//TODO: single post
+router.get('/post/:id', async (req, res) => {
+  res.send('Render single posts veiw along with posts with id ${req.paramas.id}')
+}); 
+   
+//TODO: login view   
+router.get('/login', async (req, res) => {
+  res.send('Render logins veiw from the db')
+}); 
+  
+//TODO: Sing up view
+router.get('/signup', async (req, res) => {
+  res.send('Render signup veiw from the db')
+}}; 
 
 module.exports = router;
