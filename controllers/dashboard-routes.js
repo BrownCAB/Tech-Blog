@@ -6,4 +6,4 @@
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>
-Try it Yourself »
+

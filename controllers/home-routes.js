@@ -22,6 +22,6 @@ router.get('/login', async (req, res) => {
 //TODO: Sing up view
 router.get('/signup', async (req, res) => {
   res.send('Render signup veiw from the db')
-}}; 
+}); 
 
 module.exports = router;
