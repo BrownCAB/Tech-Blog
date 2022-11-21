@@ -1,16 +1,35 @@
 const path = require('path');
 const express = require('express');
-const sequelize = require('./config/connection');
 const routes = require('./controllers');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
 // Initialize the app and create a port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // Set handlebars as the default template engine
 const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+const sess = {
+    cookie: {
+       // Stored in milliseconds
+      maxAge: 300000, // expires after 5 minutes 
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize,
+    }),
+  };
+
+app.use(session(sess));
 
 // Set up body & url parsing middleware
 app.use(express.json());
@@ -25,37 +44,6 @@ app.use(routes);
 // Sync with db, then start server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => { 
-  console.log(`Server now listening ${PORT}`)
+  console.log(`Server now listening on ${PORT}!`)
   });
 });
-
-
-// Other code
-// const session = require('express-session');
-// const exphbs = require('express-handlebars');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-
-
-
-// const helpers = require('./utils/helpers');
-
-
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {
-//      // Stored in milliseconds
-//     maxAge: 10 * 60 * 1000, // expires after 10 minutes 
-//     expires: 600, // expires after 10 minutes Internet explorer
-//   },
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize,
-//   }),
-// };
-
-// app.use(session(sess));
-
-
-

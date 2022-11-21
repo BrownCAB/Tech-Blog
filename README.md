@@ -44,7 +44,7 @@ The challenge use will follow the MVC paradigm in its architectural structure, u
 
 
 ## Credits 
-
+Instructor, 2u Tutor
 
 
 ## Questions
