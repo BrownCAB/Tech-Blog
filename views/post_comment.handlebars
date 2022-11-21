@@ -1,5 +1,16 @@
 <div id='page-singlepost'>
   <div id='single-post'>
+      <div id='post-header'>
+      <p id='post-title'>{{post.title}}</p>
+      <p id='post-date'>{{format_date post.date}}</p>
+    </div>
+    <p id='post-body'>{{post.description}}</p>
+    <p id='post-user'>- {{post.user}}</p>
+  </div>
+  <form id='comment-form'>
+    {{#if loggedIn}}
+ <div id='page-singlepost'>
+  <div id='single-post'>
     <div id='post-header'>
       <p id='post-title'>{{post.title}}</p>
       <p id='post-date'>{{format_date post.date}}</p>
@@ -54,6 +65,7 @@
     {{/if}}
   </div>
 </div>
-<script src='/javascript/create-comment.js'></script>
-<script src='/javascript/update-comment.js'></script>
-<script src='/javascript/delete-comment.js'></script>
+
+<script src='/js/create-comment.js'></script>
+<script src='/js/update-comment.js'></script>
+<script src='/js/delete-comment.js'></script>
