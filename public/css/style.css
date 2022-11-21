@@ -1,14 +1,33 @@
 #root {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    --primary: white;
+    --secondary:
+}
+
+h1,h2,h3,h4,h5,p {
     font-family: 'Roboto', sans-serif;
 }
 
-h1,h2,h3,h4,h5 {
-    font-family: 'Roboto', sans-serif;
+button {
+  padding: 6px 30px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  transition: var(--base-transition);
+}
+
+main {
+  margin-bottom: 60px;
 }
 
 header {
     padding: 32px;
 }
 
+.comment-section {
+
+}
