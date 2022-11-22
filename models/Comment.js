@@ -1,6 +1,6 @@
 // import models
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('./config/connection');
+const sequelize = require('../config/connection');
 
 // Create our User model
 class Comment extends Model {}
@@ -8,7 +8,7 @@ class Comment extends Model {}
 Comment.init (
     {
         id:{
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
@@ -19,7 +19,7 @@ Comment.init (
             validate: { len: [1] }, 
         },
         user_id:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: "user",

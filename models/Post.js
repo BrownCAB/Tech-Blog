@@ -1,11 +1,11 @@
 // import models
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('./config/connection');
+const sequelize = require('../config/connection');
 
 // Create our User model
 class Post extends Model {}
 
-post.init (
+Post.init (
     {
         id:{
             type: DataTypes.INTEGER,
