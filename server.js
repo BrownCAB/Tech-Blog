@@ -9,7 +9,7 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const sequelize = require('./config/connection');
+const sequelize = require('./config/connection.js');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Set handlebars as the default template engine
@@ -18,6 +18,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 const sess = {
+    secret:process.env.secret,
     cookie: {
        // Stored in milliseconds
       maxAge: 300000, // expires after 5 minutes 
@@ -42,8 +43,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // Sync with db, then start server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => { 
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(PORT, () => { 
+//   console.log(`Server now listening on ${PORT}!`)
+//   });
+// });
+app.listen(PORT, () => { 
   console.log(`Server now listening on ${PORT}!`)
-  });
+  sequelize.sync({ force: false })
 });
+
