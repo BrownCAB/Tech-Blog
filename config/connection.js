@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-require('dotnev').config()
+require('dotenv').config()
 
 // create connection to our db with heroku
 const sequelize = process.env.JAWSDB_URL
