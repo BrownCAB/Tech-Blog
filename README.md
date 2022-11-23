@@ -40,9 +40,15 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 The challenge use will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Testing
-
-
-
+```
+1. Add a .env file 
+2. npm i // to install npm
+3. mysql -u root -p // sign into MySQL
+4. SOURCE filename.sql // inject data
+5. node server.js // create the tables
+6. npm run watch // to start nodemon server
+7.
+```
 ## Credits 
 Instructor, 2u Tutor
 
