@@ -15,7 +15,8 @@
 - [Questions](#Questions)
 
 ## Description
-
+<img src="assets/tech-blog.PNG">
+<br>
 I'll be building a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. I’ll build this site completely from scratch and deploy it to Heroku. 
 
 AS A developer who writes about tech
@@ -24,12 +25,12 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Links
 
-
+ <a href="https://powerful-retreat-01534.herokuapp.com/login"><h3>Heroku link</h3></a>
 
 ## Installation
 
 1. Create files needed to preform the challenge.
-2. Install and/or require MYSQL2 to connect MYSQL database, Inquirer and console.table package to print MySQL rows to the console.
+2. Install and/or require packages.
 3. Modify the code based on the Acceptance criteria.
 4. Full fill the acceptances criteria grading requirements.
 5. Add, Commit, and Push Repo to Github.
@@ -50,7 +51,7 @@ The challenge use will follow the MVC paradigm in its architectural structure, u
 7. Login into Heroku and follow the deployment instructions 
 ```
 ## Credits 
-Instructor, 2u Tutor
+Instructor, 2u Tutor and TA.
 
 
 ## Questions
