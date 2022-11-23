@@ -25,7 +25,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Links
 
- <a href="https://powerful-retreat-01534.herokuapp.com/"><Heroku link</a>
+ <a href="https://powerful-retreat-01534.herokuapp.com/">Heroku link</a>
 
 ## Installation
 
