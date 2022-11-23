@@ -46,8 +46,8 @@ The challenge use will follow the MVC paradigm in its architectural structure, u
 3. mysql -u root -p // sign into MySQL
 4. SOURCE filename.sql // inject data
 5. node server.js // create the tables
-6. npm run watch // to start nodemon server
-7.
+6. npm run watch or npm start // to start server
+7. Login into Heroku and follow the deployment instructions 
 ```
 ## Credits 
 Instructor, 2u Tutor
